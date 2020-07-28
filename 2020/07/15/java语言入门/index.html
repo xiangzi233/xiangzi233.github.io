@@ -1,104 +1,107 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>java语言入门 | Hexo</title><meta name="description" content="1.2 编译器：完成编译任务的程序，在高级语言执行执行之前一次性对程序进行完整的编译; 这种高级语言叫做源代码，源代码编译后的结果是字节码; java语言最大的特点是一次编写到处运行; 源代码—编译器—字节码—解释器（JVM Java虚拟机）—计算机运行.  1.3Java 程序的构成Java 源代码是一个后缀为 java 的文本文件注意：Java 文件名必须是英文字母（有数字也可以，尽量不用数字"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="java语言入门"><meta property="og:url" content="http://yoursite.com/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="1.2 编译器：完成编译任务的程序，在高级语言执行执行之前一次性对程序进行完整的编译; 这种高级语言叫做源代码，源代码编译后的结果是字节码; java语言最大的特点是一次编写到处运行; 源代码—编译器—字节码—解释器（JVM Java虚拟机）—计算机运行.  1.3Java 程序的构成Java 源代码是一个后缀为 java 的文本文件注意：Java 文件名必须是英文字母（有数字也可以，尽量不用数字"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-07-15T07:30:00.000Z"><meta property="article:modified_time" content="2020-07-23T06:20:36.468Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
 
-  
-  <title>java语言入门 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.2 编译器：完成编译任务的程序，在高级语言执行执行之前一次性对程序进行完整的编译; 这种高级语言叫做源代码，源代码编译后的结果是字节码; java语言最大的特点是一次编写到处运行; 源代码—编译器—字节码—解释器（JVM Java虚拟机）—计算机运行.  1.3Java 程序的构成Java 源代码是一个后缀为 java 的文本文件注意：Java 文件名必须是英文字母（有数字也可以，尽量不用数字">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java语言入门">
-<meta property="og:url" content="http://yoursite.com/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.2 编译器：完成编译任务的程序，在高级语言执行执行之前一次性对程序进行完整的编译; 这种高级语言叫做源代码，源代码编译后的结果是字节码; java语言最大的特点是一次编写到处运行; 源代码—编译器—字节码—解释器（JVM Java虚拟机）—计算机运行.  1.3Java 程序的构成Java 源代码是一个后缀为 java 的文本文件注意：Java 文件名必须是英文字母（有数字也可以，尽量不用数字">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j1/j1-1/codeDesc1.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j1/j1-3/method1.svg">
-<meta property="og:image" content="d:%5Copt%5CGit%5Cdownloads%5Cxiangzi233.github.io%5Csource%5C_posts%5Cpost-name%5Clocaldate.png">
-<meta property="article:published_time" content="2020-07-15T07:30:00.000Z">
-<meta property="article:modified_time" content="2020-07-23T06:20:36.468Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://style.youkeda.com/img/ham/course/j1/j1-1/codeDesc1.svg">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-java语言入门" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" class="article-date">
-  <time datetime="2020-07-15T07:30:00.000Z" itemprop="datePublished">2020-07-15</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      java语言入门
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-2"><a href="#1-2" class="headerlink" title="1.2"></a>1.2</h3><ul>
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="post_name" href="http://yoursite.com/2020/07/15/post-name/"><link rel="next" title="chushi" href="http://yoursite.com/2020/07/11/chushi/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2"><span class="toc-number">1.</span> <span class="toc-text">1.2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3Java-程序的构成"><span class="toc-number">2.</span> <span class="toc-text">1.3Java 程序的构成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-Java-代码注释"><span class="toc-number">3.</span> <span class="toc-text">1.4 Java 代码注释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-变量"><span class="toc-number">4.</span> <span class="toc-text">2.1 变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-赋值"><span class="toc-number">5.</span> <span class="toc-text">2.2 赋值</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-数据类型"><span class="toc-number">6.</span> <span class="toc-text">2.3 数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-4-运算符"><span class="toc-number">7.</span> <span class="toc-text">2.4 运算符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-数学函数"><span class="toc-number">8.</span> <span class="toc-text">3.1 数学函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-自定义方法"><span class="toc-number">9.</span> <span class="toc-text">3.2 自定义方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3自定义方法调用"><span class="toc-number">10.</span> <span class="toc-text">3.3自定义方法调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-4-方法参数"><span class="toc-number">11.</span> <span class="toc-text">3.4 方法参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-条件执行"><span class="toc-number">12.</span> <span class="toc-text">4.1 条件执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-选择性执行"><span class="toc-number">13.</span> <span class="toc-text">4.2 选择性执行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-条件判断链"><span class="toc-number">14.</span> <span class="toc-text">4.3 条件判断链</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-嵌套条件"><span class="toc-number">15.</span> <span class="toc-text">4.4 嵌套条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-5-返回语句"><span class="toc-number">16.</span> <span class="toc-text">4.5 返回语句</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-6-递归"><span class="toc-number">17.</span> <span class="toc-text">4.6 递归</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-布尔-amp-amp-逻辑运算符"><span class="toc-number">18.</span> <span class="toc-text">5.2 布尔&amp;&amp;逻辑运算符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#逻辑运算符"><span class="toc-number">18.1.</span> <span class="toc-text">逻辑运算符</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-自增和自减"><span class="toc-number">19.</span> <span class="toc-text">6.1 自增和自减</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-2-数组"><span class="toc-number">20.</span> <span class="toc-text">6.2 数组</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-3-for循环"><span class="toc-number">21.</span> <span class="toc-text">6.3 for循环</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#扩展知识点"><span class="toc-number">21.1.</span> <span class="toc-text">扩展知识点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#嵌套循环"><span class="toc-number">21.2.</span> <span class="toc-text">嵌套循环</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1调用字符串对象方法"><span class="toc-number">22.</span> <span class="toc-text">7.1调用字符串对象方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-字符串常用方法"><span class="toc-number">23.</span> <span class="toc-text">7.2 字符串常用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#查找字符串indexOf"><span class="toc-number">23.1.</span> <span class="toc-text">查找字符串indexOf</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串拼接-substring"><span class="toc-number">23.2.</span> <span class="toc-text">字符串拼接 substring</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串开始和结束内容判断startsWith-endsWith"><span class="toc-number">23.3.</span> <span class="toc-text">字符串开始和结束内容判断startsWith&#x2F;endsWith</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串替换-replaceAll"><span class="toc-number">23.4.</span> <span class="toc-text">字符串替换 replaceAll</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-字符串操作"><span class="toc-number">24.</span> <span class="toc-text">7.3 字符串操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串分割-split-“分割字符串”"><span class="toc-number">24.1.</span> <span class="toc-text">字符串分割 split(“分割字符串”)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#大小写转化toUpperCase-toLowerCase"><span class="toc-number">24.2.</span> <span class="toc-text">大小写转化toUpperCase&#x2F;toLowerCase</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串比较equals"><span class="toc-number">24.3.</span> <span class="toc-text">字符串比较equals</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#数字和字符串转化Integer-parseInt"><span class="toc-number">24.4.</span> <span class="toc-text">数字和字符串转化Integer.parseInt</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-包（package）的导入"><span class="toc-number">25.</span> <span class="toc-text">8.1 包（package）的导入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#日期时间和字符串的转化"><span class="toc-number">25.1.</span> <span class="toc-text">日期时间和字符串的转化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#获取日期时间具体的值"><span class="toc-number">25.2.</span> <span class="toc-text">获取日期时间具体的值</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-1-时间日期类的运用"><span class="toc-number">26.</span> <span class="toc-text">8.1 时间日期类的运用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串转化为日期时间"><span class="toc-number">26.1.</span> <span class="toc-text">字符串转化为日期时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时间日期的计算"><span class="toc-number">26.2.</span> <span class="toc-text">时间日期的计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#两个日期时间的判断"><span class="toc-number">26.3.</span> <span class="toc-text">两个日期时间的判断</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-8-2-4里面比较时间的表达"><span class="toc-number"></span> <span class="toc-text">2. 8.2.4里面比较时间的表达</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-3面向对象-抽象"><span class="toc-number">1.</span> <span class="toc-text">8.3面向对象-抽象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-4-面向对象-包"><span class="toc-number">2.</span> <span class="toc-text">8.4 面向对象-包</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#引入自定义的类"><span class="toc-number">2.1.</span> <span class="toc-text">引入自定义的类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-5-面向对象-属性-方法"><span class="toc-number">3.</span> <span class="toc-text">8.5 面向对象-属性&#x2F;方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对象属性"><span class="toc-number">3.1.</span> <span class="toc-text">对象属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象方法"><span class="toc-number">3.2.</span> <span class="toc-text">对象方法</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题：静态方法和对象方法的区别"><span class="toc-number"></span> <span class="toc-text">问题：静态方法和对象方法的区别</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-6-实例化对象"><span class="toc-number">1.</span> <span class="toc-text">8.6 实例化对象</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#构造函数"><span class="toc-number">1.1.</span> <span class="toc-text">构造函数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-7-构造函数"><span class="toc-number">2.</span> <span class="toc-text">8.7 构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#带参构造函数"><span class="toc-number">2.1.</span> <span class="toc-text">带参构造函数</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题：为什么定义了新的构造函数，默认函数会失效，必须要有一个默认的构造函数程序才能正常运行吗？"><span class="toc-number"></span> <span class="toc-text">问题：为什么定义了新的构造函数，默认函数会失效，必须要有一个默认的构造函数程序才能正常运行吗？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#8-7-构造函数-1"><span class="toc-number">1.</span> <span class="toc-text">8.7 构造函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例化-File"><span class="toc-number">1.1.</span> <span class="toc-text">实例化 File</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#问题：-看不懂另外两种实例化方式"><span class="toc-number"></span> <span class="toc-text">问题： 看不懂另外两种实例化方式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#获取文件大小方法"><span class="toc-number">0.0.1.</span> <span class="toc-text">获取文件大小方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-8-ArrayList"><span class="toc-number">1.</span> <span class="toc-text">8.8 ArrayList</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-实战机器人对话"><span class="toc-number">2.</span> <span class="toc-text">9. 实战机器人对话</span></a></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hexo</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">java语言入门</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-07-15 15:30:00"><i class="far fa-calendar-alt fa-fw"></i> Created 2020-07-15</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-07-23 14:20:36"><i class="fas fa-history fa-fw"></i> Updated 2020-07-23</span></time></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="1-2"><a href="#1-2" class="headerlink" title="1.2"></a>1.2</h3><ul>
 <li>编译器：完成编译任务的程序，在高级语言执行执行之前一次性对程序进行完整的编译;</li>
 <li>这种高级语言叫做源代码，源代码编译后的结果是字节码;</li>
 <li>java语言最大的特点是一次编写到处运行;</li>
 <li>源代码—编译器—字节码—解释器（JVM Java虚拟机）—计算机运行.</li>
 </ul>
-<h3 id="1-3Java-程序的构成"><a href="#1-3Java-程序的构成" class="headerlink" title="1.3Java 程序的构成"></a>1.3Java 程序的构成</h3><p>Java 源代码是一个后缀为 java 的文本文件<br>注意：Java 文件名必须是英文字母（有数字也可以，尽量不用数字），不能有空格,首字母是大写;<br><img src="https://style.youkeda.com/img/ham/course/j1/j1-1/codeDesc1.svg" alt=""><br><code>System.out.println(&quot;&quot;)</code>  执行：打印一行，println 是 print new line 单词缩写；<br>java代码基本是一行一行执行的，所以每一行代码结束的地方都得有 <code>;</code></p>
+<h3 id="1-3Java-程序的构成"><a href="#1-3Java-程序的构成" class="headerlink" title="1.3Java 程序的构成"></a>1.3Java 程序的构成</h3><p>Java 源代码是一个后缀为 java 的文本文件<br>注意：Java 文件名必须是英文字母（有数字也可以，尽量不用数字），不能有空格,首字母是大写;<br><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j1/j1-1/codeDesc1.svg" alt=""><br><code>System.out.println(&quot;&quot;)</code>  执行：打印一行，println 是 print new line 单词缩写；<br>java代码基本是一行一行执行的，所以每一行代码结束的地方都得有 <code>;</code></p>
 <h3 id="1-4-Java-代码注释"><a href="#1-4-Java-代码注释" class="headerlink" title="1.4 Java 代码注释"></a>1.4 Java 代码注释</h3><p>块注释</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*我是块注释</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
@@ -168,7 +171,7 @@
 <li>隐藏程序细节，程序更清晰，降低复杂度。</li>
 </ol>
 <p>​    </p>
-<h3 id="3-4-方法参数"><a href="#3-4-方法参数" class="headerlink" title="3.4 方法参数"></a>3.4 方法参数</h3><p><img src="https://style.youkeda.com/img/ham/course/j1/j1-3/method1.svg" alt=""></p>
+<h3 id="3-4-方法参数"><a href="#3-4-方法参数" class="headerlink" title="3.4 方法参数"></a>3.4 方法参数</h3><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j1/j1-3/method1.svg" alt=""></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Custom</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    random(<span class="number">100000</span>);</span><br><span class="line">    random(<span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">  *生成随机数</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">random</span><span class="params">(<span class="keyword">int</span> length)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> code = (<span class="keyword">int</span>) ((Math.random()+<span class="number">1</span>) * length);</span><br><span class="line">    System.out.println(code);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -461,7 +464,7 @@
 <p>除了上面的实例化方式，File 还有两个常用的构造函数。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据parent路径名字符串和child路径名字符串创建一个新 File 实例</span></span><br><span class="line">File(String parent, String child)</span><br><span class="line"></span><br><span class="line"><span class="comment">//通过给定的父文件对象和子路径名字符串创建一个新的File实例</span></span><br><span class="line">File(File parent, String child)</span><br></pre></td></tr></table></figure>
 
-<h1 id="问题：-看不懂另外两种实例化方式"><a href="#问题：-看不懂另外两种实例化方式" class="headerlink" title="问题： 看不懂另外两种实例化方式"></a>问题： 看不懂另外两种实例化方式</h1><p><img src="D:%5Copt%5CGit%5Cdownloads%5Cxiangzi233.github.io%5Csource%5C_posts%5Cpost-name%5Clocaldate.png" alt="image-20200723142003767"></p>
+<h1 id="问题：-看不懂另外两种实例化方式"><a href="#问题：-看不懂另外两种实例化方式" class="headerlink" title="问题： 看不懂另外两种实例化方式"></a>问题： 看不懂另外两种实例化方式</h1><p><img src= "/img/loading.gif" data-src="D:%5Copt%5CGit%5Cdownloads%5Cxiangzi233.github.io%5Csource%5C_posts%5Cpost-name%5Clocaldate.png" alt="image-20200723142003767"></p>
 <p>实例化成功后，File 类会找到对应的那个文件，从而可以获取和操作文件</p>
 <h5 id="获取文件大小方法"><a href="#获取文件大小方法" class="headerlink" title="获取文件大小方法"></a>获取文件大小方法</h5><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 返回字节数</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">length</span><span class="params">()</span></span></span><br></pre></td></tr></table></figure>
 
@@ -520,131 +523,4 @@
 
 <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[INFO] --- exec-maven-plugin:<span class="number">3.0</span><span class="number">.0</span>:java (<span class="keyword">default</span>-cli) @ app ---</span><br><span class="line">请问你想查询哪个城市</span><br><span class="line">西安:周日 <span class="number">07</span>月<span class="number">19</span>日,晴 西风转南风,最低气温<span class="number">19</span>度，最高气温<span class="number">31</span>度。</span><br><span class="line">------运行结束------</span><br><span class="line">#</span><br></pre></td></tr></table></figure>
 
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/" data-id="ckd5k3gnm0004a8v25sjja9ii" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/07/15/post-name/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          post_name
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/07/11/chushi/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">chushi</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/07/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">数据结构与算法入门</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/%E6%96%B0Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">新Java网络编程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">java面向对象</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/15/post-name/">post_name</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">java语言入门</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">http://yoursite.com/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/15/post-name/"><img class="prev-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">post_name</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/11/chushi/"><img class="next-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">chushi</div></div></a></div></nav></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By John Doe</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font_plus" title="Increase Font Size"><i class="fas fa-plus"></i></button><button id="font_minus" title="Decrease Font Size"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script></body></html>

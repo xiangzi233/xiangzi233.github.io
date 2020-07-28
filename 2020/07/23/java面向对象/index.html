@@ -1,134 +1,110 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>java面向对象 | Hexo</title><meta name="description" content="1.1 面向对象入门 在Java中对象其实就是一个Class(类)，在Java 世界中所有的程序都是由Class (对象、类)组成的；  UML类图：管理和维护对象的图形语言。 了解类框图   QQ群界面    UML类图  转换成java代码： 123456789101112131415161718192021package com.qq.model;&#x2F;** *  群对象，封装了群的基础数据 *"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://yoursite.com/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin="crossorigin"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><meta property="og:type" content="article"><meta property="og:title" content="java面向对象"><meta property="og:url" content="http://yoursite.com/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"><meta property="og:site_name" content="Hexo"><meta property="og:description" content="1.1 面向对象入门 在Java中对象其实就是一个Class(类)，在Java 世界中所有的程序都是由Class (对象、类)组成的；  UML类图：管理和维护对象的图形语言。 了解类框图   QQ群界面    UML类图  转换成java代码： 123456789101112131415161718192021package com.qq.model;&#x2F;** *  群对象，封装了群的基础数据 *"><meta property="og:image" content="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg"><meta property="article:published_time" content="2020-07-23T07:29:18.841Z"><meta property="article:modified_time" content="2020-07-23T07:29:04.736Z"><meta name="twitter:card" content="summary"><script>var activateDarkMode = function () {
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#000')
+  }
+}
+var activateLightMode = function () {
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null) {
+    document.querySelector('meta[name="theme-color"]').setAttribute('content', '#fff')
+  }
+}
 
-  
-  <title>java面向对象 | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.1 面向对象入门 在Java中对象其实就是一个Class(类)，在Java 世界中所有的程序都是由Class (对象、类)组成的；  UML类图：管理和维护对象的图形语言。 了解类框图   QQ群界面    UML类图  转换成java代码： 123456789101112131415161718192021package com.qq.model;&#x2F;** *  群对象，封装了群的基础数据 *">
-<meta property="og:type" content="article">
-<meta property="og:title" content="java面向对象">
-<meta property="og:url" content="http://yoursite.com/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="1.1 面向对象入门 在Java中对象其实就是一个Class(类)，在Java 世界中所有的程序都是由Class (对象、类)组成的；  UML类图：管理和维护对象的图形语言。 了解类框图   QQ群界面    UML类图  转换成java代码： 123456789101112131415161718192021package com.qq.model;&#x2F;** *  群对象，封装了群的基础数据 *">
-<meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/qq-group.png">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/group_user.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/chouxiang1.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/student_major_2.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/arrows.jpg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/public1.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/setter3.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/static1.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/userservice1.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/extends.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/dog2.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/LoginService.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/RoleService.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/interface.png">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/implements.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/RoleService1.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/RoleService2.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/java-map1.png">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/RoleService3.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/ExceptionTest2.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/UserServiceException.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/ParamNullException.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/exceptionMethod.png">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/InnerTool.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/tools.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/weapon.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/aggregation.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/composition.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/dependency.svg">
-<meta property="og:image" content="https://style.youkeda.com/img/ham/course/j2/bar.svg">
-<meta property="article:published_time" content="2020-07-23T07:29:18.841Z">
-<meta property="article:modified_time" content="2020-07-23T07:29:04.736Z">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://style.youkeda.com/img/ham/course/qq-group.png">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+var getCookies = function (name) {
+  const value = `; ${document.cookie}`
+  const parts = value.split(`; ${name}=`)
+  if (parts.length === 2) return parts.pop().split(';').shift()
+}
 
-<meta name="generator" content="Hexo 4.2.1"></head>
+var autoChangeMode = 'false'
+var t = getCookies('theme')
+if (autoChangeMode === '1') {
+  var isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+  var isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+  var isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-java面向对象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" class="article-date">
-  <time datetime="2020-07-23T07:29:18.841Z" itemprop="datePublished">2020-07-23</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      java面向对象
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-1-面向对象入门"><a href="#1-1-面向对象入门" class="headerlink" title="1.1 面向对象入门"></a>1.1 面向对象入门</h3><ul>
+  if (t === undefined) {
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport) {
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour <= 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+    }
+    window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+      if (Cookies.get('theme') === undefined) {
+        e.matches ? activateDarkMode() : activateLightMode()
+      }
+    })
+  } else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else if (autoChangeMode === '2') {
+  now = new Date()
+  hour = now.getHours()
+  isNight = hour <= 6 || hour >= 18
+  if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode()
+} else {
+  if (t === 'dark') activateDarkMode()
+  else if (t === 'light') activateLightMode()
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="prev" title="新Java网络编程" href="http://yoursite.com/2020/07/23/%E6%96%B0Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"><link rel="next" title="post_name" href="http://yoursite.com/2020/07/15/post-name/"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: false,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false    
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isSidebar: true
+  }</script><noscript><style>
+#nav {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="/img/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><i class="fas fa-arrow-right on" id="toggle-sidebar"></i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-1-面向对象入门"><span class="toc-number">1.</span> <span class="toc-text">1.1 面向对象入门</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-2-类的关联关系"><span class="toc-number">2.</span> <span class="toc-text">1.2 类的关联关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#对象"><span class="toc-number">2.1.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象的特性"><span class="toc-number">2.2.</span> <span class="toc-text">对象的特性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关联"><span class="toc-number">2.3.</span> <span class="toc-text">关联</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#"><span class="toc-number">2.4.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#-1"><span class="toc-number">2.5.</span> <span class="toc-text"></span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类之间关系有"><span class="toc-number">2.6.</span> <span class="toc-text">类之间关系有</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-3-访问控制修饰符"><span class="toc-number">3.</span> <span class="toc-text">1.3 访问控制修饰符</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#类"><span class="toc-number">3.1.</span> <span class="toc-text">类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#类的方法-实例变量"><span class="toc-number">3.2.</span> <span class="toc-text">类的方法&#x2F;实例变量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-4-封装"><span class="toc-number">4.</span> <span class="toc-text">1.4 封装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-5-常量"><span class="toc-number">5.</span> <span class="toc-text">1.5 常量</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#常用字符串常量"><span class="toc-number">5.1.</span> <span class="toc-text">常用字符串常量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内存缓存"><span class="toc-number">5.2.</span> <span class="toc-text">内存缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UML图中常量声明"><span class="toc-number">5.3.</span> <span class="toc-text">UML图中常量声明</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-1-继承语法"><span class="toc-number">6.</span> <span class="toc-text">2.1 继承语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-2-方法覆盖"><span class="toc-number">7.</span> <span class="toc-text">2.2 方法覆盖</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例化Dog对象"><span class="toc-number">7.1.</span> <span class="toc-text">实例化Dog对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实例化Animal对象"><span class="toc-number">7.2.</span> <span class="toc-text">实例化Animal对象</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-3-super-关键字"><span class="toc-number">8.</span> <span class="toc-text">2.3 super 关键字</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1接口的语法"><span class="toc-number">9.</span> <span class="toc-text">3.1接口的语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-接口实现类"><span class="toc-number">10.</span> <span class="toc-text">3.2 接口实现类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#实例化"><span class="toc-number">10.1.</span> <span class="toc-text">实例化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口转化"><span class="toc-number">10.2.</span> <span class="toc-text">接口转化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#UML接口实现图"><span class="toc-number">10.3.</span> <span class="toc-text">UML接口实现图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命名规则"><span class="toc-number">10.4.</span> <span class="toc-text">命名规则</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-2-2-任务"><span class="toc-number">11.</span> <span class="toc-text">3.2.2 任务</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-3-Java常用接口"><span class="toc-number">12.</span> <span class="toc-text">3.3 Java常用接口</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-1-Java异常机制"><span class="toc-number">13.</span> <span class="toc-text">4.1 Java异常机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-2-常见的异常类"><span class="toc-number">14.</span> <span class="toc-text">4.2 常见的异常类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#多个异常捕获"><span class="toc-number">14.1.</span> <span class="toc-text">多个异常捕获</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-3-抛出异常"><span class="toc-number">15.</span> <span class="toc-text">4.3 抛出异常</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#UML图"><span class="toc-number">15.1.</span> <span class="toc-text">UML图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-4-自定义异常"><span class="toc-number">16.</span> <span class="toc-text">4.4 自定义异常</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#finally"><span class="toc-number">16.1.</span> <span class="toc-text">finally</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-1-内部类语法"><span class="toc-number">17.</span> <span class="toc-text">5.1 内部类语法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#UML类图"><span class="toc-number">17.1.</span> <span class="toc-text">UML类图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#内部类实例化"><span class="toc-number">17.2.</span> <span class="toc-text">内部类实例化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#访问实例内部类"><span class="toc-number">17.3.</span> <span class="toc-text">访问实例内部类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#静态内部类"><span class="toc-number">17.4.</span> <span class="toc-text">静态内部类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#局部内部类"><span class="toc-number">17.5.</span> <span class="toc-text">局部内部类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-2-匿名类"><span class="toc-number">18.</span> <span class="toc-text">5.2 匿名类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#随机数补充介绍"><span class="toc-number">18.1.</span> <span class="toc-text">随机数补充介绍</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-3-接口中的默认方法"><span class="toc-number">19.</span> <span class="toc-text">5.3 接口中的默认方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#抽象类UML图"><span class="toc-number">19.1.</span> <span class="toc-text">抽象类UML图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#接口的默认方法"><span class="toc-number">19.2.</span> <span class="toc-text">接口的默认方法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-1-对象的关系"><span class="toc-number">20.</span> <span class="toc-text">6.1 对象的关系</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#聚合关系-Aggregation"><span class="toc-number">20.1.</span> <span class="toc-text">聚合关系(Aggregation)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#聚合关系UML图"><span class="toc-number">20.2.</span> <span class="toc-text">聚合关系UML图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组合关系-Composition"><span class="toc-number">20.3.</span> <span class="toc-text">组合关系(Composition)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#组合关系UML图"><span class="toc-number">20.4.</span> <span class="toc-text">组合关系UML图</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#依赖关系-Dependency"><span class="toc-number">21.</span> <span class="toc-text">依赖关系(Dependency)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#继承-Inheritance-实现-Realization-关系"><span class="toc-number">21.1.</span> <span class="toc-text">继承(Inheritance)&#x2F;实现(Realization)关系</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-1-List和数组的互换"><span class="toc-number">22.</span> <span class="toc-text">7.1 List和数组的互换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#static-List-asList-T…-a"><span class="toc-number">22.1.</span> <span class="toc-text">static List asList(T… a)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List转为数组"><span class="toc-number">22.2.</span> <span class="toc-text">List转为数组</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#List转为字符串"><span class="toc-number">22.3.</span> <span class="toc-text">List转为字符串</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-2-排序"><span class="toc-number">23.</span> <span class="toc-text">7.2 排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Arrays-sort"><span class="toc-number">23.1.</span> <span class="toc-text">Arrays.sort()</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Arrays-toString-的方法签名如下"><span class="toc-number">23.2.</span> <span class="toc-text">Arrays.toString 的方法签名如下</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义排序"><span class="toc-number">23.3.</span> <span class="toc-text">自定义排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集合的排序"><span class="toc-number">23.4.</span> <span class="toc-text">集合的排序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-3-集合操作"><span class="toc-number">24.</span> <span class="toc-text">7.3 集合操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#删除-remove"><span class="toc-number">24.1.</span> <span class="toc-text">删除 remove</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#合并-addAll"><span class="toc-number">24.2.</span> <span class="toc-text">合并 addAll</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#截取-subList"><span class="toc-number">24.3.</span> <span class="toc-text">截取 subList</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg)"><nav id="nav"><span class="pull-left" id="blog_name"><a class="blog_title" id="site-name" href="/">Hexo</a></span><span class="pull-right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down menus-expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><div id="post-title"><div class="posttitle">java面向对象</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2020-07-23 15:29:18"><i class="far fa-calendar-alt fa-fw"></i> Created 2020-07-23</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-07-23 15:29:04"><i class="fas fa-history fa-fw"></i> Updated 2020-07-23</span></time></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta__icon"></i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"></span></div></div></div></header><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h3 id="1-1-面向对象入门"><a href="#1-1-面向对象入门" class="headerlink" title="1.1 面向对象入门"></a>1.1 面向对象入门</h3><ul>
 <li><p>在Java中对象其实就是一个Class(类)，在Java 世界中所有的程序都是由Class (对象、类)组成的；</p>
 </li>
 <li><p>UML类图：管理和维护对象的图形语言。</p>
 <p>了解类框图   QQ群界面</p>
 </li>
 </ul>
-<p><img src="https://style.youkeda.com/img/ham/course/qq-group.png" alt="qq群界面"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/qq-group.png" alt="qq群界面"></p>
 <p>UML类图</p>
-<p><img src="https://style.youkeda.com/img/ham/course/group_user.svg" alt="UML类图"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/group_user.svg" alt="UML类图"></p>
 <p>转换成java代码：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.qq.model;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> *  群对象，封装了群的基础数据</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Group</span></span>&#123;</span><br><span class="line">    <span class="comment">//群唯一的ID</span></span><br><span class="line">    String id;</span><br><span class="line">    <span class="comment">//群号</span></span><br><span class="line">    String groupNo;</span><br><span class="line">    <span class="comment">//群图标</span></span><br><span class="line">    String icon;</span><br><span class="line">    <span class="comment">//群名称</span></span><br><span class="line">    String name;</span><br><span class="line">    <span class="comment">//群公告</span></span><br><span class="line">    String notice;</span><br><span class="line">    <span class="comment">//群简介</span></span><br><span class="line">    String desc;</span><br><span class="line">    <span class="comment">// 群成员</span></span><br><span class="line">    ArrayList&lt;User&gt; users;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -137,7 +113,7 @@
 <h3 id="1-2-类的关联关系"><a href="#1-2-类的关联关系" class="headerlink" title="1.2 类的关联关系"></a>1.2 类的关联关系</h3><p>真实世界里每一个事物（学校、电影、音乐等等）都能用计算机模拟，这些事物叫做<strong>领域</strong></p>
 <h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><p>对象是对问题领域中事物的抽象</p>
 <p>抽象就是把事物变成编程语言的过程</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/chouxiang1.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/chouxiang1.svg" alt="img"></p>
 <h4 id="对象的特性"><a href="#对象的特性" class="headerlink" title="对象的特性"></a>对象的特性</h4><ol>
 <li><p>万物皆对象</p>
 </li>
@@ -147,7 +123,7 @@
 <li><p>对象具备属性和方法</p>
 </li>
 </ol>
-<h4 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src="https://style.youkeda.com/img/ham/course/j2/student_major_2.svg" alt="img"></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><img src="https://style.youkeda.com/img/ham/course/j2/arrows.jpg" alt="img"></h4><p>该线条表示<code>student</code>  类通过  <code>major</code>  属性关联了 类<code>Major</code></p>
+<h4 id="关联"><a href="#关联" class="headerlink" title="关联"></a>关联</h4><h4 id=""><a href="#" class="headerlink" title=""></a><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/student_major_2.svg" alt="img"></h4><h4 id="-1"><a href="#-1" class="headerlink" title=""></a><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/arrows.jpg" alt="img"></h4><p>该线条表示<code>student</code>  类通过  <code>major</code>  属性关联了 类<code>Major</code></p>
 <h4 id="类之间关系有"><a href="#类之间关系有" class="headerlink" title="类之间关系有"></a>类之间关系有</h4><ol>
 <li>关联</li>
 <li>依赖</li>
@@ -198,7 +174,7 @@
 </tbody></table>
 <p>注： protected一般和父子类在一起才生效</p>
 <h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><p>可以用<code>public</code>和<code>默认</code>,不可以用 protected和private</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/public1.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/public1.svg" alt="img"></p>
 <h4 id="类的方法-实例变量"><a href="#类的方法-实例变量" class="headerlink" title="类的方法/实例变量"></a>类的方法/实例变量</h4><p>一般情况下类的成员变量(属性)就叫做实例变量</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Hello</span> </span>&#123;</span><br><span class="line">  <span class="comment">// 声明一个公开访问的字符串类型实例变量</span></span><br><span class="line">  <span class="keyword">public</span> String msg = <span class="string">"Hello"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 声明一个公开访问的方法</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">say</span><span class="params">(String word)</span></span>&#123;</span><br><span class="line">      <span class="keyword">return</span> msg + word;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -211,9 +187,9 @@
 
 
 <p>UML封装图</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/setter3.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/setter3.svg" alt="img"></p>
 <h3 id="1-5-常量"><a href="#1-5-常量" class="headerlink" title="1.5 常量"></a>1.5 常量</h3><p>也可以叫静态变量，可以直接获取或者操作变量，不需要实例化，借助关键字<code>static</code></p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/static1.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/static1.svg" alt="img"></p>
 <p>static关键字：用于声明静态变量、静态代码块，可在其中执行代码并且调用static变量；</p>
 <p>schools：常量的变量名为与变量区分开，一般<strong>全大写</strong>，单词间用<code>-</code>分隔开</p>
 <h4 id="常用字符串常量"><a href="#常用字符串常量" class="headerlink" title="常用字符串常量"></a>常用字符串常量</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 用户Session key</span></span><br><span class="line"><span class="comment">  * final 表示 该变量不可被再次修改</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String USER_KEY = <span class="string">"m_key"</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">  * 手机验证码 key</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">final</span> String SMS_KEY = <span class="string">"m_sms_key"</span>;</span><br></pre></td></tr></table></figure>
@@ -223,13 +199,13 @@
 <h4 id="内存缓存"><a href="#内存缓存" class="headerlink" title="内存缓存"></a>内存缓存</h4><p>先声明static变量再创建static</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.service;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.model.School;</span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 学校服务</span></span><br><span class="line"><span class="comment"> */</span> </span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SchoolService</span></span>&#123;</span><br><span class="line">  <span class="comment">// 学校数据的常量</span></span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">static</span> ArrayList&lt;School&gt; SCHOOLS = <span class="keyword">new</span> ArrayList&lt;&gt;();    </span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">  <span class="comment">// 声明一个静态代码块，用于初始化学校数据</span></span><br><span class="line">  <span class="keyword">static</span>&#123;</span><br><span class="line">    School school = <span class="keyword">new</span> School();</span><br><span class="line">    school.setId(<span class="string">"1"</span>);</span><br><span class="line">    school.setName(<span class="string">"北京大学"</span>);</span><br><span class="line">    SCHOOLS.add(school);</span><br><span class="line"></span><br><span class="line">      <span class="comment">//初始化school，再赋值</span></span><br><span class="line">    school = <span class="keyword">new</span> School();</span><br><span class="line">    school.setId(<span class="string">"2"</span>);</span><br><span class="line">    school.setName(<span class="string">"清华大学"</span>);</span><br><span class="line">    SCHOOLS.add(school);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 测试打印一下内存的数据</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;SCHOOLS.size();i++)&#123;</span><br><span class="line">      School school = SCHOOLS.get(i);</span><br><span class="line">      System.out.println(school.getName());</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="UML图中常量声明"><a href="#UML图中常量声明" class="headerlink" title="UML图中常量声明"></a>UML图中常量声明</h4><p><img src="https://style.youkeda.com/img/ham/course/j2/userservice1.svg" alt="img"></p>
+<h4 id="UML图中常量声明"><a href="#UML图中常量声明" class="headerlink" title="UML图中常量声明"></a>UML图中常量声明</h4><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/userservice1.svg" alt="img"></p>
 <p>加一个下划线</p>
-<h3 id="2-1-继承语法"><a href="#2-1-继承语法" class="headerlink" title="2.1 继承语法"></a>2.1 继承语法</h3><p><img src="https://style.youkeda.com/img/ham/course/j2/extends.svg" alt="img"></p>
+<h3 id="2-1-继承语法"><a href="#2-1-继承语法" class="headerlink" title="2.1 继承语法"></a>2.1 继承语法</h3><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/extends.svg" alt="img"></p>
 <p>Dog：Animal的子类</p>
 <p>Animal: 父类</p>
 <p>UML类图：</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/dog2.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/dog2.svg" alt="img"></p>
 <p>箭头子类指向父类</p>
 <p><strong>注意：继承关系中，子类只可以获取父类的protected，或者public的，获取不到private级别的变量或者方法</strong></p>
 <h3 id="2-2-方法覆盖"><a href="#2-2-方法覆盖" class="headerlink" title="2.2 方法覆盖"></a>2.2 方法覆盖</h3><p>在子类重写父类定义的方法</p>
@@ -258,17 +234,17 @@
 <p>我们定义了一个接口类以后，就可以支持多个实现类，接口的调用方不用关心是谁写的实现类，只关心接口的方法参数、方法返回值就可以无缝的完成程序的对接。</p>
 <ol start="2">
 <li><p>接口的定义</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/LoginService.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/LoginService.svg" alt="img"></p>
 </li>
 <li><p>UML接口定义</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/RoleService.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/RoleService.svg" alt="img"></p>
 <p>表示定义了一个<code>RoleService</code>接口，它依赖了<code>Role</code>类</p>
 </li>
 </ol>
 <p>接口</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/interface.png" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/interface.png" alt="img"></p>
 <p>接口命名规范：XxxxxService</p>
-<h3 id="3-2-接口实现类"><a href="#3-2-接口实现类" class="headerlink" title="3.2 接口实现类"></a>3.2 接口实现类</h3><p><img src="https://style.youkeda.com/img/ham/course/j2/implements.svg" alt="img"></p>
+<h3 id="3-2-接口实现类"><a href="#3-2-接口实现类" class="headerlink" title="3.2 接口实现类"></a>3.2 接口实现类</h3><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/implements.svg" alt="img"></p>
 <ul>
 <li>接口定义的方法在实现类里必须要全部实现了，而且方法签名要一模一样（同样的方法名称、方法参数、方法返回值）</li>
 <li>由于接口定义的方法都是<code>public</code>的，所以实现类的方法控制修饰符也必须是<code>public</code></li>
@@ -288,7 +264,7 @@
 <h4 id="接口转化"><a href="#接口转化" class="headerlink" title="接口转化"></a>接口转化</h4><p>实现了多个接口，实例可以被转化</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.youkeda.service.RoleService;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.service.impl.RoleServiceImpl;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * RoleServiceTest</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RoleServiceTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">      <span class="comment">//实例化</span></span><br><span class="line">    RoleService roleService = <span class="keyword">new</span> RoleServiceImpl();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 类型转化：把 roleService 实例转化为 EchoService 接口类型</span></span><br><span class="line">      <span class="comment">//总结：新接口 新名称 = （新接口）被转化的名称；</span></span><br><span class="line">    EchoService echoService = (EchoService)roleService;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="UML接口实现图"><a href="#UML接口实现图" class="headerlink" title="UML接口实现图"></a>UML接口实现图</h4><p><img src="https://style.youkeda.com/img/ham/course/j2/RoleService1.svg" alt="img"></p>
+<h4 id="UML接口实现图"><a href="#UML接口实现图" class="headerlink" title="UML接口实现图"></a>UML接口实现图</h4><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/RoleService1.svg" alt="img"></p>
 <h4 id="命名规则"><a href="#命名规则" class="headerlink" title="命名规则"></a>命名规则</h4><ul>
 <li><p>一实现类的包名在service包下并且命名为impl</p>
 </li>
@@ -297,7 +273,7 @@
 <li><p>例：<code>com . youkeda. service. impl. RoleServiceImpl</code></p>
 </li>
 </ul>
-<h3 id="3-2-2-任务"><a href="#3-2-2-任务" class="headerlink" title="3.2.2 任务"></a>3.2.2 任务</h3><p><img src="https://style.youkeda.com/img/ham/course/j2/RoleService2.svg" alt="img"></p>
+<h3 id="3-2-2-任务"><a href="#3-2-2-任务" class="headerlink" title="3.2.2 任务"></a>3.2.2 任务</h3><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/RoleService2.svg" alt="img"></p>
 <p>如上图，我们根据这个UML图完成代码的编写，<br>我们需要你在RoleServiceTest类里完成RoleService角色数据的添加和取。你需要得到RoleService的实例，以及调用addRole方法，最后调用getRoles方法得到所有的角色，并打印出角色集合的最后-条记录的名称和描述。测试数据如下</p>
 <table>
 <thead>
@@ -356,7 +332,7 @@
 </ul>
 </li>
 </ul>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/java-map1.png" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/java-map1.png" alt="img"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Map;</span><br><span class="line"><span class="keyword">import</span> java.util.HashMap;</span><br><span class="line"></span><br><span class="line"><span class="comment">// key value 得是 Java 类型</span></span><br><span class="line"><span class="comment">//Map&lt;key,value&gt; map = new HashMap&lt;&gt;();</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 实例化Map对象</span></span><br><span class="line">Map&lt;Integer,String&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line"></span><br><span class="line">map.put(<span class="number">1</span>,<span class="string">"Monday"</span>);</span><br><span class="line">map.put(<span class="number">2</span>,<span class="string">"Tuesday"</span>);</span><br><span class="line">map.put(<span class="number">3</span>,<span class="string">"Wednesday"</span>);</span><br><span class="line">map.put(<span class="number">4</span>,<span class="string">"Thursday"</span>);</span><br><span class="line">map.put(<span class="number">5</span>,<span class="string">"Friday"</span>);</span><br><span class="line">map.put(<span class="number">6</span>,<span class="string">"Saturday"</span>);</span><br><span class="line">map.put(<span class="number">7</span>,<span class="string">"Sunday"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//取值</span></span><br><span class="line">String weekText = map.get(<span class="number">3</span>);</span><br><span class="line">System.out.println(weekText);</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"> <span class="keyword">for</span> (Map.Entry&lt;Integer,String&gt; entry : map.entrySet())&#123; </span><br><span class="line"></span><br><span class="line">   System.out.println(<span class="string">"Key = "</span> + entry.getKey() + </span><br><span class="line">                  <span class="string">", Value = "</span> + entry.getValue());</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -378,7 +354,7 @@
 
 
 <p>3.3.3 任务</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/RoleService3.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/RoleService3.svg" alt="img"></p>
 <p>任务清单</p>
 <p>1.重构 RoleService</p>
 <p>ArrayList换成了List</p>
@@ -455,7 +431,7 @@
 <p>捕获：处理该异常</p>
 </li>
 </ul>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/ExceptionTest2.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/ExceptionTest2.svg" alt="img"></p>
 <p>异常被捕获后程序可正常运行</p>
 <h3 id="4-2-常见的异常类"><a href="#4-2-常见的异常类" class="headerlink" title="4.2 常见的异常类"></a>4.2 常见的异常类</h3><ul>
 <li><p>java异常类：一般命名为XxxxxException</p>
@@ -504,13 +480,13 @@ System.out.println(d.length()); // 抛出NullPointerException</code></p>
 
 <p>为了获取异常的信息,我们还使用了<code>e. getMessage()</code>这个可以获取异常的符串消息，这个指我们在<code>new Exception(&quot;姓名不能为空&quot;)</code>时候出传入的。</p>
 <p><em>建议少用RuntimeException，因为这个在编译阶段是不做检查的，可能产生一些未知问题</em></p>
-<h4 id="UML图"><a href="#UML图" class="headerlink" title="UML图"></a>UML图</h4><p><img src="https://style.youkeda.com/img/ham/course/j2/UserServiceException.svg" alt="img"></p>
+<h4 id="UML图"><a href="#UML图" class="headerlink" title="UML图"></a>UML图</h4><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/UserServiceException.svg" alt="img"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.service;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">UserService</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function">User <span class="title">login</span><span class="params">(String userName,String password)</span> <span class="keyword">throws</span> NullPointerException</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
 
 <h3 id="4-4-自定义异常"><a href="#4-4-自定义异常" class="headerlink" title="4.4 自定义异常"></a>4.4 自定义异常</h3><p>以 UserService 为例，之前我们在 login 上抛出了 Exception，这个实在搞不明白是啥异常,所以我们创建了一个 ParamNullException</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/ParamNullException.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/ParamNullException.svg" alt="img"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamNullException</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>参数为空的时候异常</p>
@@ -523,7 +499,7 @@ System.out.println(d.length()); // 抛出NullPointerException</code></p>
 <p>以上运行会报错</p>
 <p>因为我们调用了<code>throw new ParamNullException(&quot;密码为空&quot;);</code></p>
 <p>大家知道这个new其实执行了ParamNullException 的构造函数，但是我们并没有创建这个方法，所以我们需要新增这个构造函数。在创建构造函数的时候，你得先了解一下父类的构造函数</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/exceptionMethod.png" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/exceptionMethod.png" alt="img"></p>
 <p>我们创建的时候必须要执行 super 构造函数的，所以最后你应该是这样的</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ParamNullException</span> <span class="keyword">extends</span> <span class="title">Exception</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ParamNullException</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="title">ParamNullException</span><span class="params">(String msg)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">super</span>(msg);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -545,12 +521,12 @@ System.out.println(d.length()); // 抛出NullPointerException</code></p>
 <p>想调用内部类，要<strong>先实例化</strong>且实例化只能在<code>Outer</code>内完成</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//实例化</span></span><br><span class="line">    <span class="keyword">private</span> InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><p><img src="https://style.youkeda.com/img/ham/course/j2/InnerTool.svg" alt="img"></p>
+<h4 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h4><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/InnerTool.svg" alt="img"></p>
 <h4 id="内部类实例化"><a href="#内部类实例化" class="headerlink" title="内部类实例化"></a>内部类实例化</h4><p>加需求，实现3个数字的加法；</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.util;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtil</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">InnerTool</span> </span>&#123; <span class="comment">// 内部类</span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> a+b;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> InnerTool tool = <span class="keyword">new</span> InnerTool();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b,<span class="keyword">int</span> c)</span></span>&#123;</span><br><span class="line">       <span class="keyword">return</span> tool.add( tool.add(a,b) , c );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><code>tool.add( tool.add(a,b) , c );</code></p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/tools.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/tools.svg" alt="img"></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.youkeda.test;</span><br><span class="line"><span class="keyword">import</span> com.youkeda.util.OuterUtil;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">OuterUtilTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">       OuterUtil outer = <span class="keyword">new</span> OuterUtil();</span><br><span class="line"></span><br><span class="line">       <span class="keyword">int</span> sum = outer.add(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">       System.out.println(sum);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="访问实例内部类"><a href="#访问实例内部类" class="headerlink" title="访问实例内部类"></a>访问实例内部类</h4><p>其他类调用内部类</p>
@@ -606,7 +582,7 @@ System.out.println(d.length()); // 抛出NullPointerException</code></p>
 <p>声明抽象类后，它的子类必须实现抽象方法，如同实现接口一样</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GoldenBar</span> <span class="keyword">extends</span> <span class="title">Weapon</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">attack</span><span class="params">()</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"使用金箍棒进行劈一棍"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="抽象类UML图"><a href="#抽象类UML图" class="headerlink" title="抽象类UML图"></a>抽象类UML图</h4><p><img src="https://style.youkeda.com/img/ham/course/j2/weapon.svg" alt="img"></p>
+<h4 id="抽象类UML图"><a href="#抽象类UML图" class="headerlink" title="抽象类UML图"></a>抽象类UML图</h4><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/weapon.svg" alt="img"></p>
 <h4 id="接口的默认方法"><a href="#接口的默认方法" class="headerlink" title="接口的默认方法"></a>接口的默认方法</h4><p>接口的默认方法也解决另外一个常见的重构问题，就是接口新增一个方法不需要所有子类修改，起到平滑升级的目的。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;</span><br><span class="line">      System.out.println(<span class="string">"我是一辆车!"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -617,17 +593,17 @@ System.out.println(d.length()); // 抛出NullPointerException</code></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Company</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List&lt;Employee&gt; employees;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Employee</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="聚合关系UML图"><a href="#聚合关系UML图" class="headerlink" title="聚合关系UML图"></a>聚合关系UML图</h4><p>注意箭头</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/aggregation.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/aggregation.svg" alt="img"></p>
 <h4 id="组合关系-Composition"><a href="#组合关系-Composition" class="headerlink" title="组合关系(Composition)"></a>组合关系(Composition)</h4><p>聚合是一种较弱形式的对象包含(一个对象包含另一个对象)关系，较强形式是组合(Composition)。在组合关系中包含对象负责被包含对象的创建以及生命周期，即当包含对象被销毁时被包含对象也会不复存在。</p>
 <p>例如一辆汽车拥有一个引擎是汽车类 Car 与引擎类 Engine 的组合关系。下面是组合的一些例子。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 实例化一个不可变的属性 engine</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">final</span> Engine engine = <span class="keyword">new</span> Engine();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Engine</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> String type;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="组合关系UML图"><a href="#组合关系UML图" class="headerlink" title="组合关系UML图"></a>组合关系UML图</h4><p><img src="https://style.youkeda.com/img/ham/course/j2/composition.svg" alt="img"></p>
+<h4 id="组合关系UML图"><a href="#组合关系UML图" class="headerlink" title="组合关系UML图"></a>组合关系UML图</h4><p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/composition.svg" alt="img"></p>
 <h3 id="依赖关系-Dependency"><a href="#依赖关系-Dependency" class="headerlink" title="依赖关系(Dependency)"></a>依赖关系(Dependency)</h3><p>依赖(Dependency)描述的是一个类的引用用作另一个类的方法的参数。</p>
 <p>如，我们之前使用的 UserService 和 User 之间就是依赖关系,大家注意看一下线条，依赖和关联的区别在于有没有属性存在，<em>依赖的类是有属性变量的</em></p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/dependency.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/dependency.svg" alt="img"></p>
 <h4 id="继承-Inheritance-实现-Realization-关系"><a href="#继承-Inheritance-实现-Realization-关系" class="headerlink" title="继承(Inheritance)/实现(Realization)关系"></a>继承(Inheritance)/实现(Realization)关系</h4><p>继承和实现的 UML 图是一样的表达了子类继承父类，实现类实现接口的关系</p>
-<p><img src="https://style.youkeda.com/img/ham/course/j2/bar.svg" alt="img"></p>
+<p><img src= "/img/loading.gif" data-src="https://style.youkeda.com/img/ham/course/j2/bar.svg" alt="img"></p>
 <h3 id="7-1-List和数组的互换"><a href="#7-1-List和数组的互换" class="headerlink" title="7.1 List和数组的互换"></a>7.1 List和数组的互换</h3><p>专门处理数组和集合的类<code>java.util.Arrays</code></p>
 <h4 id="static-List-asList-T…-a"><a href="#static-List-asList-T…-a" class="headerlink" title="static List asList(T… a)"></a>static List asList(T… a)</h4><p>asList 方法是把任意的相同对象实例转变为 List。</p>
 <p>T 是泛型类型 : 泛型代表可以是任意的 Java 对象，比如 String、Course 等。泛型如果要使用，还<strong>需要在方法名前面再额外声明</strong>，比如我们这里的<code>&lt;T&gt;</code></p>
@@ -704,131 +680,4 @@ System.out.println(d.length()); // 抛出NullPointerException</code></p>
 <h4 id="截取-subList"><a href="#截取-subList" class="headerlink" title="截取 subList"></a>截取 subList</h4><p>从集合里截取一段内容，我们就得需要 <code>subList(int begin,int end)</code> 方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SubListDemo</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String args[])</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        List&lt;String&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">        list.add(<span class="string">"Geeks"</span>);</span><br><span class="line">        list.add(<span class="string">"for"</span>);</span><br><span class="line">        list.add(<span class="string">"Geeks1"</span>);</span><br><span class="line">        list.add(<span class="string">"10"</span>);</span><br><span class="line">        list.add(<span class="string">"20"</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"集合: "</span> + list);</span><br><span class="line"><span class="comment">//截取第三（包含）（0 1 2）条到第四条（不含）</span></span><br><span class="line">        List&lt;String&gt; arrlist2 = list.subList(<span class="number">2</span>, <span class="number">4</span>);</span><br><span class="line"></span><br><span class="line">        System.out.println(<span class="string">"修改后的集合: "</span> + arrlist2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出：</span><br><span class="line">    </span><br><span class="line">集合: [Geeks, <span class="keyword">for</span>, Geeks1, <span class="number">10</span>, <span class="number">20</span>]</span><br><span class="line">修改后的集合: [Geeks1, <span class="number">10</span>]</span><br></pre></td></tr></table></figure>
 
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/" data-id="ckd5k3gni0002a8v2dnv44qn4" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2020/07/23/%E6%96%B0Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          新Java网络编程
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/07/15/post-name/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">post_name</div>
-    </a>
-  
-</nav>
-
-  
-</article>
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">July 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/07/26/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95%E5%85%A5%E9%97%A8/">数据结构与算法入门</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/%E6%96%B0Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/">新Java网络编程</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">java面向对象</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/15/post-name/">post_name</a>
-          </li>
-        
-          <li>
-            <a href="/2020/07/15/java%E8%AF%AD%E8%A8%80%E5%85%A5%E9%97%A8/">java语言入门</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://yoursite.com/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/">http://yoursite.com/2020/07/23/java%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2020/07/23/%E6%96%B0Java%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"><img class="prev-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">新Java网络编程</div></div></a></div><div class="next-post pull-right"><a href="/2020/07/15/post-name/"><img class="next-cover" data-src="https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">post_name</div></div></a></div></nav></article></main><footer id="footer" data-type="color"><div id="footer-wrap"><div class="copyright">&copy;2020 By John Doe</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><button id="readmode" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="font_plus" title="Increase Font Size"><i class="fas fa-plus"></i></button><button id="font_minus" title="Decrease Font Size"><i class="fas fa-minus"></i></button><button class="translate_chn_to_cht" id="translateLink" title="Switch Between Traditional Chinese And Simplified Chinese">繁</button><button id="darkmode" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button></div><div id="rightside-config-show"><button id="rightside_config" title="Setting"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js" async></script></body></html>
